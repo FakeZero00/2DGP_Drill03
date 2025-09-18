@@ -71,6 +71,5 @@ if __name__ == '__main__':
         square_move(character, grass)
         triangle_move(character, grass)
         circle_move(character, grass, (400, 300), 210)
-        pass
 
     close_canvas()
