@@ -20,6 +20,12 @@ def move_direction(character, wallpaper, direction, distance):
             char_y += 1
         elif direction == 'down':
             char_y -= 1
+        elif direction == 'left-up':
+            char_x -= 1
+            char_y += 1
+        elif direction == 'left-down':
+            char_x -= 1
+            char_y -= 1
 
         character.draw_now(char_x, char_y)
         delay(0.001)
@@ -47,6 +53,12 @@ def circle_move(character, wallpaper, origin, radius):
         character.draw_now(char_x, char_y)
         delay(0.001)
 
+def triangle_move(character, wallpaper):
+    move_direction(character, wallpaper, 'right', 380)
+    move_direction(character, wallpaper, 'left-up', 380)
+    move_direction(character, wallpaper, 'left-down', 380)
+    move_direction(character, wallpaper, 'right', 380)
+
 
 if __name__ == '__main__':
     open_canvas()
@@ -57,6 +69,7 @@ if __name__ == '__main__':
     while True: #배경 그리기
 
         square_move(character, grass)
+        triangle_move(character, grass)
         circle_move(character, grass, (400, 300), 210)
         pass
 
