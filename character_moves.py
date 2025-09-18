@@ -1,3 +1,5 @@
+#2022182034 임성진
+
 from pico2d import *
 import math
 
